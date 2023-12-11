@@ -1,0 +1,18 @@
+<h1>Calculations</h1>
+
+
+<!--Our calculator has <%= Calculator.public_count %> calculators and counting!-->
+
+
+<ul>
+  <% @calculations.each do |calculation| %>
+      <% unless calculation.archived? %>
+    <li>
+
+      <td><%= calculation.number_one %></td>
+    </li>
+  <% end %>
+ <% end %>
+</ul>
+
+<%= link_to "New Calculation", calculator_calculations_path %>

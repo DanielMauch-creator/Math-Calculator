@@ -1,0 +1,35 @@
+<%= form_with model: @calculator do |form| %>
+
+<% if @calculator.errors.any? %>
+  <div id="error_explanation"
+    class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+    <h2><%= pluralize(@calculator.errors.count, "error") %>
+      prohibited this calculator from being saved:</h2>
+    <ul>
+      <% @calculator.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<div>
+  <%= form.label :status %><br>
+  <%= form.select :status, Visible::VALID_STATUSES, selected: @calculator.status || 'public' %>
+</div>
+
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </div>
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+

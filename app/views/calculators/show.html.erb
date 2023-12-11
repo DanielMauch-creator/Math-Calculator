@@ -1,0 +1,21 @@
+<h1><%= @calculator.title %></h1>
+
+<p><%= @calculator.body %></p>
+
+<ul>
+  <%= render "calculations/form", calculation: @calculation%>
+  <li><%= link_to "Edit", edit_calculator_path(@calculator) %></li>
+
+   <li><%= link_to "Destroy", calculator_path(@calculator), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
+
+
+<h2>Calculations</h2>
+<%= render @calculator.calculations%>
+
+
+<h2>Add a calculation:</h2>
+<%= render 'calculations/form' %>

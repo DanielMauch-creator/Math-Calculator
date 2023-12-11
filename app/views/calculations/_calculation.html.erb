@@ -1,0 +1,29 @@
+<% unless calculation.archived? %>
+  <p>
+    <strong>Number one:</strong>
+    <%= calculation.number_one %>
+  </p>
+
+  <p>
+    <strong>Number two:</strong>
+    <%= calculation.number_two %>
+  </p>
+  
+    <p>
+    <strong>Arithmetic:</strong>
+    <%= calculation.arithmetic %>
+  </p>
+  
+  <p>
+    <strong>Result:</strong>
+    <%= calculation.result%> 
+  </p>
+
+  <p>
+    <%= link_to "Destroy Calculation", [calculation.calculator, calculation], data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %>
+  </p>
+<% end %>
+

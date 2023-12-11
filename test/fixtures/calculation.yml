@@ -1,0 +1,36 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  number_one: 2
+  number_two: 2
+  arithmetic: addition
+  result: 4
+  calculator: one
+  status: public
+
+two:
+  number_one: 3
+  number_two: 2
+  arithmetic: subtraction
+  result: 1
+  calculator: one
+  status: public
+  
+three:
+  number_one: 4
+  number_two: 3
+  arithmetic: Multiplication
+  result: 12
+  calculator: one
+  status: public
+  
+
+  
+four:
+  number_one: 2
+  number_two: 2
+  arithmetic: division
+  result: 1
+  calculator: one
+  status: public

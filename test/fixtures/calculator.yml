@@ -1,0 +1,12 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Calculator
+  body: My first Calculator
+  status: public
+
+
+two:
+  title: Calculator
+  body: My secound Calculator
+  status: public

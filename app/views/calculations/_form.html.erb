@@ -1,0 +1,51 @@
+<%= form_with model: [ @calculator, @calculator.calculations.build ] do |form| %>
+
+<% if form.object.errors.any? %>
+  <div id="error_explanation"
+    class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
+    <h2><%= pluralize(@calculation.errors.count, "error") %>
+      prohibited this calculator from being saved:</h2>
+    <ul>
+      <% @calculation.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+
+<p>
+  <%= form.label :status %><br>
+  <%= form.select :status, Visible::VALID_STATUSES, selected: 'public' %>
+</p>
+  <p>
+    <%= form.label :number_one %><br>
+    <%= form.text_field :number_one %>
+  </p>
+  <p>
+    <%= form.label :number_two %><br>
+    <%= form.text_area :number_two %>
+  </p>
+    <p>
+    <%= form.label :arithmetic_addition %><br>
+    <%= form.radio_button( "arithmetic", "addition",id:"arithmetic_addition") %>
+  </p>
+  <p>
+    <%= form.label :arithmetic_subtraction %><br>
+    <%= form.radio_button( "arithmetic", "subtraction",id:"arithmetic_subtraction") %>
+  </p>
+  <p>
+    <%= form.label :arithmetic_multiplication %><br>
+    <%= form.radio_button( "arithmetic", "multiplication", id:"arithmetic_multiplication") %>
+  </p>
+  <p>
+    <%= form.label :arithmetic_division %><br>
+    <%= form.radio_button( "arithmetic", "division", id:"arithmetic_division") %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+  
+<% end %>
+
